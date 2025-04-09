@@ -287,25 +287,38 @@ body {
     box-shadow: 0 0 0 4px rgba(37, 99, 235, 0.5);
     /* ring-blue-300 */
 }
+.dark-mode .nav-links a:focus-within {
+    outline: none;
+    box-shadow: 0 0 0 4px rgba(37, 99, 235, 0.5);
+    /* ring-blue-300 */
+}
 
 .dark-mode .dark-mode-toggle {
+    position: static;
+    top: 5px;
+    right: 5px;
+    padding: 5px 12px;
     background-color: #ffffff;
-    /* blue-800 */
-    color: #fffbfb;
+    /* blue-600 */
+    color: #000000;
     border: none;
     border-radius: 5px;
     cursor: pointer;
-    font-size: 1rem;
+    font-size: 0.9rem;
     font-weight: bold;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 2px 5px rgb(255, 255, 255);
     transition: background-color 0.3s, transform 0.2s;
     z-index: 1000;
     text-align: center;
+    /* Fixed */
     text-decoration: none;
     margin: 0 10px;
-    background-color: rgba(0, 0, 0, 0.8);
+    background-color: rgba(255, 255, 255, 0.8);
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    border: #ffffff solid 1px;
+    border: #000000 solid 1px;
+    width: 6%;
+    height: 10px;
+    line-height: 20px;
 }
 
 
