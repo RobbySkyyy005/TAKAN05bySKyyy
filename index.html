@@ -9,20 +9,25 @@
 </head>
 
 <body>
+
   <div class="navbar">
     <div class="logo">
       <img src="freepik__a-dynamic-logo-for-takancom-using-stylized-interco__29973.png" alt="TAKAN.com Logo"
         style="height: 65px;">
     </div>
-
-    <div class="nav-links">
-      <a href="#">HOME</a>
-      <a href="#">ABOUT</a>
-      <a href="#">CONTACT</a>
-    </div>
-    <div class="dark-mode-toggle">
-      <input type="checkbox" id="darkModeCheckbox" style="display: none;" onchange="toggleDarkMode()">
-      <label for="darkModeCheckbox" class="toggle-label">Dark mode</label>
+    <div class="menu-button">
+      <button onclick="toggleSidebar()">☰ Menu</button>
+    </div>  
+  </div>
+ 
+  <div id="sidebar" class="sidebar">
+      <ul class="sidebar-menu">
+        <a href="#home">Menu</a>
+        <a href="#about">About</a>
+        <a href="#services">Services</a>
+        <a href="#contact">Contact</a>
+        <a href="#privacy">Privacy Policy</a>
+      </ul>
     </div>
   </div>
 
@@ -36,18 +41,33 @@
     <p>&copy; 2025 Takan.com. All rights reserved.</p>
     <p>Designed by @Skyyy___05</p>
   </div>
-  <script>
-    function toggleDarkMode() {
-      const checkbox = document.getElementById('darkModeCheckbox');
-      const body = document.body;
-      if (checkbox.checked) {
-        body.classList.add('dark-mode');
-      } else {
-        body.classList.remove('dark-mode');
-      }
-    }
-  </script>
 </body>
+
+<script>
+  function toggleSidebar() {
+    const sidebar = document.getElementById('sidebar');
+    if (sidebar.style.display === 'block') {
+      sidebar.style.display = 'none';
+    } else {
+      sidebar.style.display = 'block';
+    }
+  }
+
+  document.addEventListener('DOMContentLoaded', () => {
+    const sidebar = document.getElementById('sidebar');
+    sidebar.style.display = 'none'; // Hide sidebar on page load
+
+    document.querySelectorAll('#sidebar a').forEach(link => {
+      link.addEventListener('click', (event) => {
+        if (event.target.getAttribute('href') === '#home') {
+          sidebar.style.display = 'none'; // Hide sidebar when Home is clicked
+        }
+      });
+    });
+  });
+</script>
+
+
 
 
 </html>
